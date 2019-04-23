@@ -12,9 +12,9 @@ public class GlitterBomb {
    
    }
    
-   public static int[] makePoints(int[] x, int[] y) {
-      for (int i = o; i < x.length() + y.length(); i++) {
-           
+   public static Point[] makePoints(int[] x, int[] y) {
+      for (int i = o; i < x.length(); i++) {
+         ArrayList Point[] = new Point[x.length()]; 
       }
       
    }
