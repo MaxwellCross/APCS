@@ -1,28 +1,35 @@
 import java.awt.*;
 import java.util.*;
-
+import java.io.*;
 
 public class GlitterBomb {
 
-   public static void main(String[] args) {
-   DrawingPanel panel = new DrawingPanel(200,200);
-   Graphics g = panel.getGraphics();
-   
-   Scanner input = new Scanner(System.in);
-   int cityCount = input.nextInt();
-   int[] x = new int[cityCount];
-   int[] y = new int[cityCount];
-   
-   }
-   
-   public static ArrayList<Point> makePoints(int[] x, int[] y, Graphics g) {
-      ArrayList<Point> Cities = new ArrayList<Point>(); 
-      for (int i = 0; i < x.length; i++) {
-         Point p = new Point(x[i], y[i]);;
-         Cities.add(p);
-         g.drawOval(p, 2, 2);
+   public static void main(String[] args) throws FileNotFoundException {
+      DrawingPanel panel = new DrawingPanel(200,200);
+      Graphics g = panel.getGraphics();
+      Scanner input = new Scanner(new File("cities.txt"));
+      ArrayList<Point> cities = new ArrayList<Point>();
+      makePoints(cities, g, input);
+      Scanner userInput = new Scanner(System.in);
+      System.out.println("Please input x, then y of bomb: ");
+      Point bombCenter = new Point(userInput.nextInt, userInput.nextInt);
+      System.out.println("Please input bomb radius: ");
+      int bombRadius = userInput.nextInt();
+      g.setColor(RED);
+      g.drawOval(bombCenter.x, bombCenter.y, radius, radius);
+      for (int i = 0; i < cityCount){
+         if (cities) {
+         
+         }
       }
-      
-      return Cities;
    }
-}
+   
+   public static void makePoints(ArrayList<Point> cities, Graphics g, Scanner input) {
+      int cityCount = input.nextInt();
+      for (int i = 0; i < cityCount; i++) {
+         Point p = new Point(input.nextInt(), input.nextInt());
+         cities.add(p);
+         p.draw(g);
+      }
+   }
+   
