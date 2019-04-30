@@ -15,17 +15,15 @@ public class GlitterBomb {
       Scanner userInput = new Scanner(System.in);
       while (true) {
          System.out.println("Please input x, then y of bomb: ");
-      //int blastCenter = userInput.nextInt();
          Point bombCenter = new Point(userInput.nextInt(),userInput.nextInt());
          System.out.println("Please input bomb radius: ");
-         int bombRadius = userInput.nextInt();
-      
+         int radius = userInput.nextInt();
       
          g.setColor(Color.red);
-         g.drawOval(bombCenter.x - bombRadius, bombCenter.y - bombRadius, 2 * bombRadius, 2 * bombRadius);
+         g.drawOval(bombCenter.x - radius, bombCenter.y - radius, 2 * radius, 2 * radius);
          for (int i = 0; i < cityCount; i++) {
             Point p = cities.get(i);
-            if (p.distance(bombCenter) <= bombRadius) {
+            if (p.distance(bombCenter) <= radius) {
                p.setColor(Color.RED);
                p.draw(g);
             }
