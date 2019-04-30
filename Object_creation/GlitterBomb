@@ -9,27 +9,36 @@ public class GlitterBomb {
       Graphics g = panel.getGraphics();
       Scanner input = new Scanner(new File("cities.txt"));
       ArrayList<Point> cities = new ArrayList<Point>();
-      makePoints(cities, g, input);
+      int cityCount = input.nextInt();
+      makePoints(cities, g, input, cityCount);
+      
       Scanner userInput = new Scanner(System.in);
-      System.out.println("Please input x, then y of bomb: ");
-      Point bombCenter = new Point(userInput.nextInt, userInput.nextInt);
-      System.out.println("Please input bomb radius: ");
-      int bombRadius = userInput.nextInt();
-      g.setColor(RED);
-      g.drawOval(bombCenter.x, bombCenter.y, radius, radius);
-      for (int i = 0; i < cityCount){
-         if (cities) {
-         
+      while (true) {
+         System.out.println("Please input x, then y of bomb: ");
+      //int blastCenter = userInput.nextInt();
+         Point bombCenter = new Point(userInput.nextInt(),userInput.nextInt());
+         System.out.println("Please input bomb radius: ");
+         int bombRadius = userInput.nextInt();
+      
+      
+         g.setColor(Color.red);
+         g.drawOval(bombCenter.x - bombRadius, bombCenter.y - bombRadius, 2 * bombRadius, 2 * bombRadius);
+         for (int i = 0; i < cityCount; i++) {
+            Point p = cities.get(i);
+            if (p.distance(bombCenter) <= bombRadius) {
+               p.setColor(Color.RED);
+               p.draw(g);
+            }
          }
       }
    }
    
-   public static void makePoints(ArrayList<Point> cities, Graphics g, Scanner input) {
-      int cityCount = input.nextInt();
-      for (int i = 0; i < cityCount; i++) {
+   public static void makePoints(ArrayList<Point> cities, Graphics g, Scanner input, int count) {
+      
+      for (int i = 0; i < count; i++) {
          Point p = new Point(input.nextInt(), input.nextInt());
          cities.add(p);
          p.draw(g);
       }
    }
-   
+}
