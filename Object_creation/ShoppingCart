@@ -1,0 +1,25 @@
+import java.util.*;
+
+
+public class ShoppingCart {
+private ItemOrder itemOrder;
+private discountIsApplied;
+   
+   public ShoppingCart() {
+      ArrayList<Item> itemList = new ArrayList<Item>();
+   }
+   
+   public void add(ItemOrder itemOrder) {
+      this.itemOrder = itemOrder
+   }
+   public void setDiscount(boolean discountIsApplied){
+      this.discountIsApplied = discountIsApplied;
+   }
+
+   public double getTotal(){
+      if (setDiscount(this.discountIsApplied) 
+         return this.itemOrder.getItem().price
+      else
+      
+   }
+}
