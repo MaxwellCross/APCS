@@ -1,0 +1,28 @@
+public class Catalog {
+
+   private String name;
+   private ArrayList<Item> itemList = new ArrayList<Item>();
+
+
+   public void Catalog(String name) {
+      this.name = name;
+      this.itemList = itemList;
+   }
+   
+   public void add(Item item) {
+      this.itemList.add(item);
+   }
+
+   public int size() {
+   return listSize;
+   }
+
+   public Item get(int index) {
+   return item;
+   }
+   
+   public String getName() {
+   return name;
+   }
+   
+}
