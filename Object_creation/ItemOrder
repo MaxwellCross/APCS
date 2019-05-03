@@ -1,0 +1,26 @@
+public class ItemOrder{
+
+private int quantity;
+private Item item;
+
+   public ItemOrder(Item item, int quantity) {
+      if (quantity < 0) {
+         throw new IllegalArgumentException("Quantity cannot be negative");
+      } else {
+         this.quantity = quantity;
+      }
+         this.item = item;
+   }
+
+   public double getPrice() {
+      if (item.priceFor(1) < 0) {
+         throw new IllegalArgumentException("Price cannnot be negative.");
+      } else {
+         return item.priceFor(1);
+      }
+   }
+
+   public Item getItem() {
+      return this.item;
+   }
+}
