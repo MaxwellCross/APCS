@@ -1,6 +1,6 @@
 public class ItemOrder{
 
-private int quantity;
+public int quantity;
 private Item item;
 
    public ItemOrder(Item item, int quantity) {
@@ -23,4 +23,10 @@ private Item item;
    public Item getItem() {
       return this.item;
    }
+   
+   public String toString() {
+      String toPrint = this.item.toString() + ", " + this.quantity;
+      return toPrint;
+   }
+   
 }
