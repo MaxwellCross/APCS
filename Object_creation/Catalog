@@ -1,28 +1,29 @@
+import java.util.*;
+
 public class Catalog {
 
    private String name;
    private ArrayList<Item> itemList = new ArrayList<Item>();
-
-
-   public void Catalog(String name) {
+   
+   public Catalog(String name) {
       this.name = name;
-      this.itemList = itemList;
    }
    
    public void add(Item item) {
       this.itemList.add(item);
    }
-
+   
    public int size() {
-   return listSize;
+      return this.itemList.size();
    }
 
    public Item get(int index) {
-   return item;
+      return this.itemList.get(index);
    }
    
    public String getName() {
-   return name;
+      return this.name;
    }
-   
+
+
 }
