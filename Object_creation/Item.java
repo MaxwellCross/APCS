@@ -1,19 +1,23 @@
 import java.text.*;
 public class Item {
    
-   private String name;
+   public String name;
    private double price;
    private int bulkQuantity;
    private double bulkPrice;
    
    public Item(String name, double price) {
+      if (name == null || name.length() <= 0)
+         this.name = "Undifined Name";
+      else
       this.name = name; 
+      if (price <= 0) 
+         throw new IllegalArgumentException("price must be greater than zero");
+      else
       this.price = price;
       this.bulkQuantity = 0;
       this.bulkPrice = 0 ;
-      if (price <= 0) 
-         throw new IllegalArgumentException("price must be greater than zero");
-   }
+   }      
 
    public Item(String name, double price, int bulkQuantity, double bulkPrice) {
       this(name, price);  
@@ -28,10 +32,12 @@ public class Item {
 
    public double priceFor(int quantity) {
       double totalPrice = 0.0;
+      if (quantity < 0) 
+         throw new IllegalArgumentException("quantity must be greater than 0");
+      else 
+      
       if (bulkQuantity == 0 || bulkPrice == 0) {
          totalPrice = quantity * price;
-      } else if (quantity <= 0) {
-         throw new IllegalArgumentException("quantity must be greater than 0");
       } else {
          totalPrice = ( (quantity / bulkQuantity) * bulkPrice) + 
             ( (quantity % bulkQuantity) * price) + .0; 
