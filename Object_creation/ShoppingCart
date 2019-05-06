@@ -1,25 +1,51 @@
+    
 import java.util.*;
 
-
 public class ShoppingCart {
+private static final double DISCOUNT = 0.1; 
 private ItemOrder itemOrder;
-private discountIsApplied;
+private boolean discountIsApplied = false;
+private ArrayList<ItemOrder> shoppingList;
    
    public ShoppingCart() {
-      ArrayList<Item> itemList = new ArrayList<Item>();
+      this.shoppingList = new ArrayList<ItemOrder>();
    }
    
    public void add(ItemOrder itemOrder) {
-      this.itemOrder = itemOrder
+      boolean duplicateFound = false; 
+      for (int i = 0; i < this.shoppingList.size(); i++) {
+         //Replace any item with same name
+         if (this.shoppingList.get(i).getItem().name == itemOrder.getItem().name) {
+            this.shoppingList.set(i, itemOrder);
+            duplicateFound = true;
+            continue;
+         }   
+      }
+      if (!duplicateFound)
+         this.shoppingList.add(itemOrder);  
    }
-   public void setDiscount(boolean discountIsApplied){
-      this.discountIsApplied = discountIsApplied;
+
+   public void setDiscount(boolean value){
+      this.discountIsApplied = value;
    }
 
    public double getTotal(){
-      if (setDiscount(this.discountIsApplied) 
-         return this.itemOrder.getItem().price
-      else
-      
+      double total = 0;
+      for (int i = 0; i < this.shoppingList.size() ; i++) {
+         ItemOrder itemOrder = shoppingList.get(i);
+         total += itemOrder.getItem().priceFor(itemOrder.quantity);
+      }
+      if (this.discountIsApplied)
+         total -= (total * DISCOUNT);
+      return total;
+   }
+   
+   
+   public String toString() {
+      String outString = "";
+      for (int i = 0; i < this.shoppingList.size() ; i++) {
+         outString += shoppingList.get(i).toString() + "\n";
+      }
+      return outString;
    }
 }
