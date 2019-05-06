@@ -5,18 +5,43 @@ public class TestShoppingCart {
    Item bubbles = new Item("Bottle of Bubbles", .99);
    Item frisbee = new Item("CS Garfield Frisbee", 2);
    Item bBooks = new Item("CS Book", 2, 4, 5.0);
-   System.out.println(bubbles);
-   System.out.println(frisbee);
-   System.out.println(bBooks);
-   System.out.println(frisbee.priceFor(5));
-   System.out.println(frisbee.priceFor(1));
-   System.out.println(bubbles.priceFor(5));
-   System.out.println(bBooks.priceFor(5)); // should be 7.00
+   Catalog springVol = new Catalog("Spring Catalog");
+   springVol.add(frisbee);
+   springVol.add(bBooks);
+   
+      //Checking Item Class Construction
+   /*
    Item bBooksbad = new Item("CS Book", 2, -5, 5.0);
+   Item legoError = new Item("Lego Star Wars Toy", -10);
+   Item frisbeeBad = new Item( null,2, 4, 5);
+   System.out.println(frisbeeBad.priceFor(10));
+   System.out.println(frisbeeBad);
+   */
+   
+   // Checking Item Class Methods: 
+   /*
+      System.out.println(bubbles);
+      System.out.println(frisbee.priceFor(5));
+      System.out.println(frisbee.priceFor(-1));
+      System.out.println(frisbee);
+   */
+   
+      
 
    
+   //Checking ItemOrder Class 
    
    
+   // ItemOrder itemOrder = new ItemOrder(bBooks, 5);
+//    ItemOrder itemOrder1 = new ItemOrder(frisbee, 10);
+//    ItemOrder itemOrder2 = new ItemOrder(bubbles, 12);
+   //System.out.println(itemOrder.getPrice());
+   //System.out.println(itemOrder.getItem());
+   // ShoppingCart shoppingCart = new ShoppingCart();
+//    shoppingCart.add(itemOrder);
+//    shoppingCart.add(itemOrder1);
+//    shoppingCart.add(itemOrder2);
+//    System.out.print(shoppingCart);
    }
 
 
