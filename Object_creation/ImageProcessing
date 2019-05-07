@@ -1,0 +1,44 @@
+import java.util.*;
+import java.io.*;
+
+public class ImageProcessing {
+
+
+
+   public static void main(String[] args) throws FileNotFoundException {
+      File txtFile = new File("homer.txt");
+      Scanner input = new Scanner(txtFile);
+      int[][] homer = makeText(input);
+      //printArray(homer);
+      printArrayHorz(homer);
+      
+   }
+
+   public static int[][] makeText(Scanner input) { 
+      int[][] asciVals = new int[input.nextInt()][input.nextInt()];
+      for (int i = 0; i < asciVals.length; i++) {
+         for (int n = 0; n < asciVals[i].length; n++) {
+            asciVals[i][n] = input.nextInt();
+         }   
+      }
+      return asciVals;
+   }
+   
+   public static void printArray(int[][] arr) {
+      for (int i = 0; i < arr.length; i++) {
+         for (int n = 0; n < arr[i].length; n++) {
+            System.out.print((char)arr[i][n]);
+         }   
+         System.out.println();
+      }
+   }   
+
+   public static void printArrayHorz(int[][] arr) {
+      for (int i = 0; i < arr.length; i++) {
+         for (int n = 0; n < arr[i].length; n++) {
+            System.out.print((char)arr[arr.length - i][n]);
+         }   
+         System.out.println();
+      }
+   }  
+}
