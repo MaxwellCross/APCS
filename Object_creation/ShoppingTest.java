@@ -9,55 +9,46 @@ public class ShoppingTest {
    //Item bBooksbad = new Item("CS Book", 2, -5, 5.0);
    //Item legoBad = new Item("Lego Star Wars Toy", -10);
    
-   // /*
-   System.out.println(frisbee);
-   System.out.println(bBooks);
-   System.out.println(frisbee.priceFor(5));
-   System.out.println(bBooks.priceFor(21));
-   // */
+   /*
+   System.out.println(frisbee);              //Should be CS Garfield Frisbbee, $2.00
+   System.out.println(bBooks);               //Should be CS Book, $2.00 (4 for $5.00)
+   System.out.println(frisbee.priceFor(5));  //Should be 10.0
+   System.out.println(bBooks.priceFor(21));  //Should be 27.0
+   */
    
    //System.out.println(frisbeeBad.priceFor(10));
    //System.out.println(frisbeeBad);
    //System.out.println(frisbee.priceFor(-1));
    
-   // /*
+   /*
    Catalog springVol = new Catalog("Spring Catalog");
-   System.out.println(springVol.size());
-   springVol.add(frisbee);
-   System.out.println(springVol.size());
-   springVol.add(bBooks);
-   System.out.println(springVol.size());
-   // */ 
+   System.out.println(springVol.size());    //Should be 0 
+   springVol.add(frisbee);                  
+   System.out.println(springVol.size());    //Should be 1
+   springVol.add(bBooks);                   
+   System.out.println(springVol.size());    //Should be 2
+   //*/ 
 
-
+   /*
    ItemOrder itemOrder = new ItemOrder(bBooks, 5);
    ItemOrder itemOrder1 = new ItemOrder(frisbee, 10);
+   System.out.println(itemOrder.getPrice() + ", " + itemOrder1.getPrice()); 
+                                           //Should be 2.0, 2.0
+   //*/
    
-   
-   //Checking ItemoOrder Class Methods
-   /*
-   System.out.println(itemOrder.getPrice());
-   System.out.println(itemOrder.getItem());
-   */
-
-   //Checking ShoppingCart Class Construction
    /*
    ShoppingCart shoppingCart = new ShoppingCart();
-   */
-   //Checking ShoppingCart Class Methods
-   
-   /*
    shoppingCart.add(itemOrder);
    shoppingCart.add(itemOrder1);
-   shoppingCart.add(itemOrder2);
-   System.out.print(shoppingCart);
+   System.out.print(shoppingCart);        //Should be CS Book, $2.00 (4 for $5.00)
    shoppingCart.setDiscount(true);
    System.out.println(shoppingCart.getTotal());
-   shoppingCart.setD
-   */
-    
-    
-    
+                                         //Should be 24.3
+   shoppingCart.setDiscount(false);
+   System.out.println(shoppingCart.getTotal());
+                                         //Should be 27.0 
+   // */
+   
    
    }
 
