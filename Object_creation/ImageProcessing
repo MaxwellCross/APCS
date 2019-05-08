@@ -9,7 +9,7 @@ public class ImageProcessing {
       File txtFile = new File("homer.txt");
       Scanner input = new Scanner(txtFile);
       int[][] homer = makeText(input);
-      //printArray(homer);
+      printArray(homer);
       printArrayHorz(homer);
       
    }
@@ -34,9 +34,9 @@ public class ImageProcessing {
    }   
 
    public static void printArrayHorz(int[][] arr) {
-      for (int i = 0; i < arr.length; i++) {
+      for (int i = arr.length - 1; i > 0; i--) {
          for (int n = 0; n < arr[i].length; n++) {
-            System.out.print((char)arr[arr.length - i][n]);
+            System.out.print((char) arr[i][n]);
          }   
          System.out.println();
       }
